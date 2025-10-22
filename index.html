@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartCard.AI - Digital Business Card Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* For a smoother scroll experience */
+      html {
+        scroll-behavior: smooth;
+      }
+      body.theme-night {
+        --bg-color: #0f172a; /* slate-900 */
+        --bg-secondary-color: #1e293b; /* slate-800 */
+        --text-color: #cbd5e1; /* slate-300 */
+        --text-secondary-color: #94a3b8; /* slate-400 */
+        --text-muted-color: #64748b; /* slate-500 */
+        --accent-color: #06b6d4; /* cyan-500 */
+        --accent-hover-color: #0891b2; /* cyan-600 */
+        --accent-text-color: #ffffff;
+        --border-color: #334155; /* slate-700 */
+        --card-form-bg: rgba(30, 41, 59, 0.5); /* slate-800/50 */
+      }
+      body.theme-day {
+        --bg-color: #f1f5f9; /* slate-100 */
+        --bg-secondary-color: #ffffff;
+        --text-color: #1e293b; /* slate-800 */
+        --text-secondary-color: #475569; /* slate-600 */
+        --text-muted-color: #64748b; /* slate-500 */
+        --accent-color: #0ea5e9; /* sky-500 */
+        --accent-hover-color: #0284c7; /* sky-600 */
+        --accent-text-color: #ffffff;
+        --border-color: #e2e8f0; /* slate-200 */
+        --card-form-bg: #ffffff;
+      }
+      body.theme-minimal {
+        --bg-color: #ffffff;
+        --bg-secondary-color: #f9fafb; /* gray-50 */
+        --text-color: #111827; /* gray-900 */
+        --text-secondary-color: #374151; /* gray-700 */
+        --text-muted-color: #6b7280; /* gray-500 */
+        --accent-color: #111827; /* gray-900 */
+        --accent-hover-color: #374151; /* gray-700 */
+        --accent-text-color: #ffffff;
+        --border-color: #e5e7eb; /* gray-200 */
+        --card-form-bg: #ffffff;
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.26.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+<body class="bg-slate-900 text-white antialiased">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
