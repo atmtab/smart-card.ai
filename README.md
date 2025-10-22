@@ -18,18 +18,45 @@ This application allows users to generate a personalized digital business card, 
 ## 🛠️ Tech Stack
 
 - **Frontend**: [React](https://reactjs.org/) & [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
 - **AI**: [Google Gemini API](https://ai.google.dev/gemini-api) (`@google/genai`)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) (via CDN)
 
-## 🚀 How to Use
+## 🚀 Running Locally
 
-1.  Navigate to the application.
-2.  Fill in your personal and professional details in the form on the left.
-3.  Click the **AI Generate** button to create a unique bio based on your title and company.
-4.  Upload a professional profile picture.
-5.  Select a card style that you like.
-6.  Your card will instantly update in the live preview.
-7.  Click **Download QR Code** to save an image that you can share with anyone. Scanning it will import your contact details directly into their phone.
+1.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+2.  **Build the application for production**:
+    ```bash
+    npm run build
+    ```
+3.  **Preview the production build**:
+    ```bash
+    npm run preview
+    ```
+    This will start a local server to view the optimized application.
+
+## ☁️ Deployment on Render.com
+
+You can deploy this application as a **Static Site** on Render for free.
+
+1.  **Push to a Git Repository**: Make sure your code is on GitHub, GitLab, or Bitbucket.
+2.  **Create a New Static Site on Render**:
+    *   Go to your [Render Dashboard](https://dashboard.render.com/).
+    *   Click "New +" and select "Static Site".
+    *   Connect your Git repository.
+3.  **Configure Build Settings**:
+    *   **Build Command**: `npm install && npm run build`
+    *   **Publish Directory**: `dist`
+4.  **Add Environment Variable**:
+    *   Go to the "Environment" tab for your new service.
+    *   Click "Add Environment Variable".
+    *   Set the **Key** to `API_KEY`.
+    *   Set the **Value** to your Google Gemini API key.
+5.  **Deploy**:
+    *   Click "Create Static Site". Render will automatically build and deploy your application.
 
 ## 📂 Project Structure
 
@@ -49,6 +76,8 @@ This application allows users to generate a personalized digital business card, 
 ├── index.html          # Main HTML file
 ├── index.tsx           # React entry point
 ├── metadata.json       # Application metadata
+├── vite.config.ts      # Vite build configuration
+├── tsconfig.json       # TypeScript configuration
 └── types.ts            # TypeScript types
 ```
 

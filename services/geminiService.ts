@@ -1,19 +1,10 @@
-
 import { GoogleGenAI } from "@google/genai";
 
-const API_KEY = process.env.API_KEY;
-
-let ai;
-if (API_KEY) {
-  ai = new GoogleGenAI({ apiKey: API_KEY });
-} else {
-  console.warn("API_KEY environment variable not set. AI features will be disabled.");
-}
+// Fix: Aligned with @google/genai guidelines to assume API_KEY is always available.
+// Removed conditional initialization and checks for the API key.
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export const generateBio = async (name: string, title: string, company: string): Promise<string> => {
-  if (!ai) {
-    return "AI-powered bio generation is currently unavailable. Please configure your API key.";
-  }
   if (!name.trim() || !title.trim() || !company.trim()) {
     return "";
   }
