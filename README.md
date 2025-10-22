@@ -19,6 +19,7 @@ This application allows users to generate a personalized digital business card, 
 
 - **Frontend**: [React](https://reactjs.org/) & [TypeScript](https://www.typescriptlang.org/)
 - **Build Tool**: [Vite](https://vitejs.dev/)
+- **Production Server**: [serve](https://www.npmjs.com/package/serve)
 - **AI**: [Google Gemini API](https://ai.google.dev/gemini-api) (`@google/genai`)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) (via CDN)
 
@@ -32,31 +33,34 @@ This application allows users to generate a personalized digital business card, 
     ```bash
     npm run build
     ```
-3.  **Preview the production build**:
+3.  **Run the production server**:
     ```bash
-    npm run preview
+    npm start
     ```
-    This will start a local server to view the optimized application.
+    This will start a local server to view the optimized application, behaving exactly as it would in production. For development, you can use `npm run preview`.
 
 ## ☁️ Deployment on Render.com
 
-You can deploy this application as a **Static Site** on Render for free.
+You can deploy this application as a **Web Service** on Render.
 
 1.  **Push to a Git Repository**: Make sure your code is on GitHub, GitLab, or Bitbucket.
-2.  **Create a New Static Site on Render**:
+2.  **Create a New Web Service on Render**:
     *   Go to your [Render Dashboard](https://dashboard.render.com/).
-    *   Click "New +" and select "Static Site".
+    *   Click "New +" and select "Web Service".
     *   Connect your Git repository.
 3.  **Configure Build Settings**:
+    *   **Region**: Choose a region close to you.
+    *   **Branch**: `main` (or your default branch).
     *   **Build Command**: `npm install && npm run build`
-    *   **Publish Directory**: `dist`
+    *   **Start Command**: `npm start`
+    *   **Instance Type**: The `Free` instance type is sufficient for this application.
 4.  **Add Environment Variable**:
     *   Go to the "Environment" tab for your new service.
     *   Click "Add Environment Variable".
     *   Set the **Key** to `API_KEY`.
     *   Set the **Value** to your Google Gemini API key.
 5.  **Deploy**:
-    *   Click "Create Static Site". Render will automatically build and deploy your application.
+    *   Click "Create Web Service". Render will automatically build and deploy your application. Your app will be live on a `.onrender.com` URL.
 
 ## 📂 Project Structure
 
