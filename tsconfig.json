@@ -10,13 +10,13 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
     "types": ["vite/client"]
   },
-  "include": ["./**/*"],
-  "exclude": ["node_modules", "build"]
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "build", "vite.config.ts"]
 }
